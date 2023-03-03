@@ -1,16 +1,16 @@
-import './notFound.scss'
+import './error404.scss'
 import Header from "../../components/header/Header";
 import { Link } from 'react-router-dom';
 
-export default function NotFound() {
+export default function Error404() {
 	return (
-		<div className='notFound'>
+		<div className='error404'>
 			<Header />
-			<div className="notFound_infos">
-				<h1 className='notFound_infos_title'>404</h1>
-				<p className='notFound_infos_content'>La page que vous recherchez n'existe pas.</p>
+			<div className="error404_infos">
+				<h1 className='error404_infos_title'>404</h1>
+				<p className='error404_infos_content'>La page que vous recherchez n'existe pas.</p>
 			</div>
-				<Link className='notFound_infos_return' to='/'>Retourner sur la page d'accueil</Link>
+				<Link className='error404_infos_return' to='/'>Retourner sur la page d'accueil</Link>
 		</div>
 	)
 }
