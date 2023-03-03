@@ -1,5 +1,5 @@
 # Project7_Kasa
-# Formation Développeur Front-End - Projet 7 - Kasa
+# Formation Développeur Web - Projet 7 - Kasa
 ------------
 ### Description du projet
 Ce projet est le n°7 du parcours [**Développeur Web**](https://openclassrooms.com/fr/paths/185-developpeur-web) qui consiste à créer un site react avec des données à récupérer en JSON.
