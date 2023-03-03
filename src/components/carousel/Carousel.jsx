@@ -1,7 +1,7 @@
-import './carousel.scss'
+import './Carousel.scss'
 import ArrowRight from '../../assets/carousel_right.png'
 import ArrowLeft from '../../assets/carousel_left.png'
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 export default function Slider({imageSlider}) {
 

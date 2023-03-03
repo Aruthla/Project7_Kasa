@@ -1,5 +1,6 @@
-import './navbar.scss'
+import './Navbar.scss'
 import { Link } from 'react-router-dom'
+import React from "react";
 
 export default function Navbar() {
 
@@ -8,8 +9,8 @@ export default function Navbar() {
     return (
         <nav className='nav'>
             <ul className='nav_list'>
-                <li className={currentRoute === '/Kasa/' ? 'nav_list_item_active' : 'nav_list_item'}>
-                    <Link  to='/Kasa/'>
+                <li className={currentRoute === '/' ? 'nav_list_item_active' : 'nav_list_item'}>
+                    <Link  to='/'>
                         Accueil
                     </Link>
                 </li>

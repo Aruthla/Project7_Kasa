@@ -1,6 +1,7 @@
-import './gallery.scss'
+import './Gallery.scss'
 import datas from '../../data'
 import Card from '../card/Card'
+import React from "react";
 
 export default function Gallery() {
 

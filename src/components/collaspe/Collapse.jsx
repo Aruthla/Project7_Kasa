@@ -1,6 +1,6 @@
-import './collapse.scss'
+import './Collapse.scss'
 import arrow from '../../assets/arrow.png';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 export default function Collapse({title, content}) {
 

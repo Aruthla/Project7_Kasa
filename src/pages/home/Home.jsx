@@ -1,8 +1,9 @@
-import './home.scss'
+import './Home.scss'
 import Header from '../../components/header/Header'
 import Banner from '../../components/banner/Banner'
 import Gallery from '../../components/gallery/Gallery'
 import Footer from '../../components/footer/Footer'
+import React from "react";
 
 export default function Home() {
 	return (

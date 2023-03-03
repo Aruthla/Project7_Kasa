@@ -1,8 +1,9 @@
-import './about.scss';
+import style from './About.module.scss';
 import Header from "../../components/header/Header";
 import Banner from '../../components/banner/Banner';
-import Collapse from '../../components/collapse/Collapse';
 import Footer from '../../components/footer/Footer';
+import Collapse from '../../components/collaspe/Collapse';
+import React from "react";
 
 export default function About() {
 
@@ -33,10 +34,10 @@ export default function About() {
 		<div>
 			<Header />
 			<Banner />
-			<main className='about_main'>
+			<main className={style.about_main}>
 				{aboutDatas.map(data => {
 					return (
-						<div key={data.id} className="about_main_collapse">
+						<div key={data.id} className={style.about_main_collapse}>
 							<Collapse style={{margin:'30px 0'}}  title={data.title} content={data.content} />
 						</div>
 					)}

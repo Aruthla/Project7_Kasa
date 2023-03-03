@@ -1,6 +1,7 @@
-import './header.scss'
+import './Header.scss'
 import Logo from '../../assets/logo.png'
 import Navbar from '../navbar/Navbar'
+import React from "react";
 
 export default function Header() {
 	return (

@@ -1,11 +1,11 @@
-import './accomodation.scss'
-import { useEffect, useState } from "react"
+import './Accomodation.scss'
+import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 import datas from '../../data'
 import Header from "../../components/header/Header";
 import Slider from "../../components/carousel/Carousel"
 import Footer from "../../components/footer/Footer";
-import Collapse from '../../components/collapse/Collapse';
+import Collapse from '../../components/collaspe/Collapse';
 import greyStar from '../../assets/grey_star.png';
 import redStar from '../../assets/red_star.png';
 
