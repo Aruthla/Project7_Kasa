@@ -1,4 +1,4 @@
-import './Error404.scss'
+import './error404.scss'
 import Header from "../../components/header/Header";
 import { Link } from 'react-router-dom';
 import React from "react";

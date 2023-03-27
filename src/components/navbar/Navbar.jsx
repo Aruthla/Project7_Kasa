@@ -1,4 +1,4 @@
-import './Navbar.scss'
+import './navbar.scss'
 import { Link } from 'react-router-dom'
 import React from "react";
 

@@ -1,4 +1,4 @@
-import style from './About.module.scss';
+import style from './about.scss';
 import Header from "../../components/header/Header";
 import Banner from '../../components/banner/Banner';
 import Footer from '../../components/footer/Footer';

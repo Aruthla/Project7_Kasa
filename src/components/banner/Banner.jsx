@@ -1,4 +1,4 @@
-import './Banner.scss'
+import './banner.scss'
 import { useLocation } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 
