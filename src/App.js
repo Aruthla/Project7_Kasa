@@ -1,5 +1,5 @@
 import Home from './pages/home/Home';
-import Error404 from './pages/error404/Error404';
+import Error from './pages/error/Error';
 import About from './pages/about/About';
 import Accomodation from './pages/accomodation/Accomodation';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -13,7 +13,7 @@ function App() {
 				<Route path="/" element={<Home />}/>
 				<Route path="/accomodation/:id" element={<Accomodation />}/>
 				<Route path="/about" element={<About />}/>
-				<Route path="*" element={<Error404 />}/>
+				<Route path="*" element={<Error />}/>
 			</Routes>
         </Router>
     </React.StrictMode>

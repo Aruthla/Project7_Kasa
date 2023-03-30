@@ -6,6 +6,7 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     margin: 0 auto;
+    margin-bottom: 30px;
     &_title{
         @include flex(row, space-between, center);
         background-color: $color-secondary;
