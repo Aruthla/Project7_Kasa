@@ -1,6 +1,6 @@
 import './accomodation.scss'
 import React, { useEffect, useState } from "react"
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import datas from '../../data'
 import Header from "../../components/header/Header";
 import Slider from "../../components/carousel/Carousel"
@@ -11,33 +11,34 @@ import redStar from '../../assets/red_star.png';
 
 
 export default function Accomodation() {
-	
-	const [imageSlider, setImageSlider] = useState([]);
-
 	const idAccomodation = useParams('id').id;
-	const dataCurrentAccomodation = datas.filter(data => data.id === idAccomodation);
-	
+	const [accomodation, setAccomodation] = useState(null);
+	let navigate = useNavigate();
+
 	useEffect(() => {
-		const dataCurrentAccomodation = datas.filter(data => data.id === idAccomodation);
-		setImageSlider(dataCurrentAccomodation[0].pictures);
+		const resultats = datas.filter(data => data.id === idAccomodation)[0];
+		console.log("Maison actuelle :", resultats);
+		if (resultats === undefined){
+			navigate("/page404")
+		}
+		else {setAccomodation(resultats)};
 	}, [idAccomodation]);
 
-	const name = dataCurrentAccomodation[0].host.name.split(' '); 
-	const rating = dataCurrentAccomodation[0].rating;
-	const description  = dataCurrentAccomodation[0].description;
-	const equipments = dataCurrentAccomodation[0].equipments;
+	if (accomodation == null) {
+		return <div>Pas de résultat</div>;
+	}
 
 	return (
 		<>
 			<Header/>
-			<Slider imageSlider={imageSlider}/>
+			<Slider imageSlider={accomodation.pictures}/>
 			<main className="accomodation">
 				<div className="accomodation_content">
 					<div className="accomodation_content_infos">
-						<h1>{dataCurrentAccomodation[0].title}</h1>
-						<p>{dataCurrentAccomodation[0].location}</p>
+						<h1>{accomodation.title}</h1>
+						<p>{accomodation.location}</p>
 						<div>
-							{dataCurrentAccomodation[0].tags.map((tag, index) => {
+							{accomodation.tags.map((tag, index) => {
 								return (
 									<button key={index}>{tag}</button>
 								)
@@ -47,17 +48,17 @@ export default function Accomodation() {
 					<div className="accomodation_content_host">
 						<div>
 							<div className='accomodation_content_host_name'>
-								<span>{name[0]}</span>
-								<span>{name[1]}</span>
+								<span>{accomodation.host.name.split(' ')[0]}</span>
+								<span>{accomodation.host.name.split(' ')[1]}</span>
 							</div>
-							<img src={dataCurrentAccomodation[0].host.picture} alt="host of this accomodation" />
+							<img src={accomodation.host.picture} alt="host of this accomodation" />
 						</div>
 							
 						<div className="accomodation_content_host_stars">
 							{[...Array(5)].map((star, index) => {
 								const ratingValue = index + 1;
 								return (
-									<img key={index} src={ratingValue <= rating ? redStar : greyStar} alt="star" />
+									<img key={index} src={ratingValue <= accomodation.rating ? redStar : greyStar} alt="star" />
 								)
 							})}
 						</div>
@@ -65,10 +66,10 @@ export default function Accomodation() {
 				</div>
 				<div className="accomodation_collapse">
 					<div className="accomodation_collapse_item">
-						<Collapse title={'Description'} content={description} />	
+						<Collapse title={'Description'} content={accomodation.description} />	
 					</div>
 					<div className="accomodation_collapse_item">
-						<Collapse title={'Équipements'} content={equipments}/>
+						<Collapse title={'Équipements'} content={accomodation.equipments}/>
 					</div>	
 				</div>
 			</main>

@@ -13,6 +13,7 @@ function App() {
 				<Route path="/" element={<Home />}/>
 				<Route path="/accomodation/:id" element={<Accomodation />}/>
 				<Route path="/about" element={<About />}/>
+				<Route path="/page404" element={<Error />}/>
 				<Route path="*" element={<Error />}/>
 			</Routes>
         </Router>
